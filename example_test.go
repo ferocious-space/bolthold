@@ -10,8 +10,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/timshannon/bolthold"
 	bolt "go.etcd.io/bbolt"
+
+	"github.com/ferocious-space/bolthold"
 )
 
 type Item struct {

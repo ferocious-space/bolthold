@@ -8,8 +8,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/timshannon/bolthold"
 	bolt "go.etcd.io/bbolt"
+
+	"github.com/ferocious-space/bolthold"
 )
 
 func TestForEach(t *testing.T) {

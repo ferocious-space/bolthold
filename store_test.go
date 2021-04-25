@@ -14,8 +14,9 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/timshannon/bolthold"
 	bolt "go.etcd.io/bbolt"
+
+	"github.com/ferocious-space/bolthold"
 )
 
 func TestOpen(t *testing.T) {

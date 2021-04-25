@@ -10,9 +10,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/timshannon/bolthold"
-	bh "github.com/timshannon/bolthold"
 	bolt "go.etcd.io/bbolt"
+
+	"github.com/ferocious-space/bolthold"
+	bh "github.com/ferocious-space/bolthold"
 )
 
 type Nested struct {

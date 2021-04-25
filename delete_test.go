@@ -9,9 +9,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/timshannon/bolthold"
-	bh "github.com/timshannon/bolthold"
 	bolt "go.etcd.io/bbolt"
+
+	"github.com/ferocious-space/bolthold"
+	bh "github.com/ferocious-space/bolthold"
 )
 
 func TestDelete(t *testing.T) {
@@ -62,11 +63,15 @@ func TestDeleteMatching(t *testing.T) {
 
 				if len(result) != (len(testData) - len(tst.result)) {
 					if testing.Verbose() {
-						t.Fatalf("Delete result count is %d wanted %d.  Results: %v", len(result),
-							(len(testData) - len(tst.result)), result)
+						t.Fatalf(
+							"Delete result count is %d wanted %d.  Results: %v", len(result),
+							len(testData)-len(tst.result), result,
+						)
 					}
-					t.Fatalf("Delete result count is %d wanted %d.", len(result),
-						(len(testData) - len(tst.result)))
+					t.Fatalf(
+						"Delete result count is %d wanted %d.", len(result),
+						len(testData)-len(tst.result),
+					)
 
 				}
 

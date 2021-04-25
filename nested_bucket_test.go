@@ -10,8 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/timshannon/bolthold"
 	bolt "go.etcd.io/bbolt"
+
+	"github.com/ferocious-space/bolthold"
 )
 
 func testWrapWithBucket(t *testing.T, tests func(store *bolthold.Store, bucket *bolt.Bucket, t *testing.T)) {
@@ -527,11 +528,15 @@ func TestDeleteMatchingBucket(t *testing.T) {
 
 				if len(result) != (len(testData) - len(tst.result)) {
 					if testing.Verbose() {
-						t.Fatalf("Delete result count is %d wanted %d.  Results: %v", len(result),
-							(len(testData) - len(tst.result)), result)
+						t.Fatalf(
+							"Delete result count is %d wanted %d.  Results: %v", len(result),
+							len(testData)-len(tst.result), result,
+						)
 					}
-					t.Fatalf("Delete result count is %d wanted %d.", len(result),
-						(len(testData) - len(tst.result)))
+					t.Fatalf(
+						"Delete result count is %d wanted %d.", len(result),
+						len(testData)-len(tst.result),
+					)
 
 				}
 

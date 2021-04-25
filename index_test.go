@@ -7,8 +7,9 @@ package bolthold_test
 import (
 	"testing"
 
-	bh "github.com/timshannon/bolthold"
 	bolt "go.etcd.io/bbolt"
+
+	bh "github.com/ferocious-space/bolthold"
 )
 
 func TestIndexSlice(t *testing.T) {

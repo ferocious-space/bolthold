@@ -9,8 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/timshannon/bolthold"
 	bolt "go.etcd.io/bbolt"
+
+	"github.com/ferocious-space/bolthold"
 )
 
 func TestInsert(t *testing.T) {

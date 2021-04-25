@@ -1,8 +1,9 @@
 # BoltHold
 
-[![Build Status](https://travis-ci.org/timshannon/bolthold.svg?branch=master)](https://travis-ci.org/timshannon/bolthold) [![GoDoc](https://godoc.org/github.com/timshannon/bolthold?status.svg)](https://pkg.go.dev/github.com/timshannon/bolthold) [![Coverage Status](https://coveralls.io/repos/github/timshannon/bolthold/badge.svg?branch=master)](https://coveralls.io/github/timshannon/bolthold?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/timshannon/bolthold)](https://goreportcard.com/report/github.com/timshannon/bolthold)
+[![Build Status](https://travis-ci.org/timshannon/bolthold.svg?branch=master)](https://travis-ci.org/timshannon/bolthold) [![GoDoc](https://godoc.org/github.com/ferocious-space/bolthold?status.svg)](https://pkg.go.dev/github.com/ferocious-space/bolthold) [![Coverage Status](https://coveralls.io/repos/github/timshannon/bolthold/badge.svg?branch=master)](https://coveralls.io/github/timshannon/bolthold?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/ferocious-space/bolthold)](https://goreportcard.com/report/github.com/ferocious-space/bolthold)
 
-BoltHold is a simple querying and indexing layer on top of a Bolt DB instance. For a similar library built on [Badger](https://github.com/dgraph-io/badger) see [BadgerHold](https://github.com/timshannon/badgerhold).
+BoltHold is a simple querying and indexing layer on top of a Bolt DB instance. For a similar library built
+on [Badger](https://github.com/dgraph-io/badger) see [BadgerHold](https://github.com/timshannon/badgerhold).
 
 The goal is to create a simple, higher level interface on top of Bolt DB that simplifies dealing with Go Types and finding data, but exposes the underlying Bolt DB for customizing as you wish. By default the encoding used is Gob, so feel free to use the GobEncoder/Decoder interface for faster serialization. Or, alternately, you can use any serialization you want by supplying encode / decode funcs to the `Options` struct on Open.
 
@@ -26,9 +27,12 @@ type Person struct {
 
 ```
 
-This means that there will be an index created for `Division` that will contain the set of unique divisions, and the main record keys they refer to. More information on how indexes work can be found [here](https://github.com/timshannon/bolthold/issues/36#issuecomment-414720348)
+This means that there will be an index created for `Division` that will contain the set of unique divisions, and the
+main record keys they refer to. More information on how indexes work can be
+found [here](https://github.com/ferocious-space/bolthold/issues/36#issuecomment-414720348)
 
-Optionally, you can implement the `Storer` interface, to specify your own indexes, rather than using the `boltholdIndex` struct tag.
+Optionally, you can implement the `Storer` interface, to specify your own indexes, rather than using the `boltholdIndex`
+struct tag.
 
 ### Slice Indexes
 
@@ -306,7 +310,8 @@ for i := range result {
 
 Aggregate queries become especially powerful when combined with the sub-querying capability of `MatchFunc`.
 
-Many more examples of queries can be found in the [find_test.go](https://github.com/timshannon/bolthold/blob/master/find_test.go) file in this repository.
+Many more examples of queries can be found in
+the [find_test.go](https://github.com/ferocious-space/bolthold/blob/master/find_test.go) file in this repository.
 
 ## Comparing
 

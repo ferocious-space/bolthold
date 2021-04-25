@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/timshannon/bolthold"
+	"github.com/ferocious-space/bolthold"
 )
 
 var sortTests = []test{
@@ -191,11 +191,15 @@ func TestSortedDeleteMatching(t *testing.T) {
 
 				if len(result) != (len(testData) - len(tst.result)) {
 					if testing.Verbose() {
-						t.Fatalf("Delete result count is %d wanted %d.  Results: %v", len(result),
-							(len(testData) - len(tst.result)), result)
+						t.Fatalf(
+							"Delete result count is %d wanted %d.  Results: %v", len(result),
+							len(testData)-len(tst.result), result,
+						)
 					}
-					t.Fatalf("Delete result count is %d wanted %d.", len(result),
-						(len(testData) - len(tst.result)))
+					t.Fatalf(
+						"Delete result count is %d wanted %d.", len(result),
+						len(testData)-len(tst.result),
+					)
 
 				}
 

@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/timshannon/bolthold"
+	"github.com/ferocious-space/bolthold"
 )
 
 type ItemTest struct {
@@ -841,8 +841,10 @@ func TestSkip(t *testing.T) {
 		}
 
 		if len(skipResult) != len(result)-skip {
-			t.Fatalf("Skip query didn't return the right number of records: Wanted %d got %d",
-				(len(result) - skip), len(skipResult))
+			t.Fatalf(
+				"Skip query didn't return the right number of records: Wanted %d got %d",
+				len(result)-skip, len(skipResult),
+			)
 		}
 
 		// confirm that the first records are skipped
