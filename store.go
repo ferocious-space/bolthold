@@ -28,6 +28,16 @@ type Options struct {
 	*bolt.Options
 }
 
+// Wrap existing db with bolthold
+func Wrap(db *bolt.DB, options *Options) (*Store, error) {
+	options = fillOptions(options)
+	return &Store{
+		db:     db,
+		encode: options.Encoder,
+		decode: options.Decoder,
+	}, nil
+}
+
 // Open opens or creates a bolthold file.
 func Open(filename string, mode os.FileMode, options *Options) (*Store, error) {
 	options = fillOptions(options)
